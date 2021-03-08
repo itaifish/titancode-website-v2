@@ -14,7 +14,7 @@ import Grow from "@material-ui/core/Grow";
 import Divider from "@material-ui/core/Divider";
 import Icon from "@material-ui/core/Icon";
 import Popper from "@material-ui/core/Popper";
-import Button from "@material-ui/core/Button";
+import Button from "components/CustomButton/Button";
 
 import styles from "assets/jss/components/customDropdownStyle.js";
 
@@ -83,6 +83,7 @@ export default function CustomDropdown(props) {
     <div>
       <div>
         <Button
+		  color = "transparent"
           aria-label="Notifications"
           aria-owns={anchorEl ? "menu-list" : null}
           aria-haspopup="true"
