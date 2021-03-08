@@ -1,58 +1,68 @@
-import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
-import Link from 'next/link';
-import Date from '../components/date';
-import { GetStaticProps } from 'next';
-import * as React from 'react';
+import React from "react";
+// nodejs library that concatenates classes
+import classNames from "classnames";
+// @material-ui/core components
+import { makeStyles } from "@material-ui/core/styles";
 
-export default function Home({
-  allPostsData
-}: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
-  }[]
-}): JSX.Element {
+// @material-ui/icons
+
+// core components
+import Header from "components/Header/Header";
+import Footer from "components/Footer/Footer";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
+import HeaderLinks from "components/Header/HeaderLinks.js";
+import Parallax from "components/Parallax/Parallax.js";
+
+import styles from "assets/jss/pages/landingPage.js";
+
+// Sections for this page
+import ProductSection from "pages-sections/landing/ProductSection";
+import TeamSection from "pages-sections/LandingPage-Sections/TeamSection.js";
+import WorkSection from "pages-sections/LandingPage-Sections/WorkSection.js";
+
+const dashboardRoutes = [];
+
+const useStyles = makeStyles((styles as any));
+
+export default function LandingPage(props) {
+  const classes = useStyles();
+  const { ...rest } = props;
   return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
+    <div>
+      <Header
+        color="transparent"
+        routes={dashboardRoutes}
+        brand="NextJS Material Kit"
+        rightLinks={<HeaderLinks />}
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: "white"
+        }}
+        {...rest}
+      />
+      <Parallax filter responsive image={require("assets/img/landing-bg.jpg")}>
+        <div className={classes.container}>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={6}>
+              <h1 className={classes.title}>Titan Code</h1>
+              <h4>
+                We don{"'"}t sell technology. We sell a solution to your problem, using code as the main tool to solve it.    
+              </h4>
               <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </Layout>
+            </GridItem>
+          </GridContainer>
+        </div>
+      </Parallax>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container}>
+          <ProductSection />
+          <TeamSection />
+          <WorkSection />
+        </div>
+      </div>
+      <Footer />
+    </div>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData
-    }
-  };
-};
