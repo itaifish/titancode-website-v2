@@ -1,4 +1,4 @@
-import '../styles/global.css';
+import "assets/scss/nextjs-material-kit.scss?v=1.1.0";
 import { AppProps } from 'next/app';
 import * as React from 'react';
 

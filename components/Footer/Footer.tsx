@@ -11,9 +11,9 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
 
-import styles from "assets/jss/nextjs-material-kit/components/footerStyle.js";
+import styles from "assets/jss/components/footerStyle.js";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function Footer(props) {
   const classes = useStyles();
@@ -70,7 +70,7 @@ export default function Footer(props) {
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
+          &copy; {new Date().getFullYear()} , made with{" "}
           <Favorite className={classes.icon} /> by{" "}
           <a
             href="https://www.creative-tim.com?ref=njsmk-footer"

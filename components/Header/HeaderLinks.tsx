@@ -15,15 +15,15 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 
 // core components
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
-import Button from "components/CustomButtons/Button.js";
+import CustomDropdown from "components/CustomDropdown/CustomDropdown";
+import Button from "@material-ui/core/Button";
 
-import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle.js";
+import styles from "assets/jss/components/headerLinksStyle.js";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function HeaderLinks(props) {
-  const classes = useStyles();
+  const classes: any = (useStyles() as any);
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
@@ -53,7 +53,6 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Button
           href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-navbar"
-          color="transparent"
           target="_blank"
           className={classes.navLink}
         >
@@ -63,7 +62,6 @@ export default function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
         <Button
           href="https://www.creative-tim.com/product/nextjs-material-kit?ref=njsmk-navbar"
-          color="transparent"
           target="_blank"
           className={classes.navLink}
         >
@@ -85,7 +83,6 @@ export default function HeaderLinks(props) {
           <Button
             href="https://twitter.com/CreativeTim?ref=creativetim"
             target="_blank"
-            color="transparent"
             className={classes.navLink}
           >
             <i className={classes.socialIcons + " fab fa-twitter"} />
@@ -100,7 +97,6 @@ export default function HeaderLinks(props) {
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
-            color="transparent"
             href="https://www.facebook.com/CreativeTim?ref=creativetim"
             target="_blank"
             className={classes.navLink}
@@ -117,7 +113,6 @@ export default function HeaderLinks(props) {
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
-            color="transparent"
             href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
             target="_blank"
             className={classes.navLink}

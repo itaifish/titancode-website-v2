@@ -11,15 +11,15 @@ import Header from "components/Header/Header";
 import Footer from "components/Footer/Footer";
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import Parallax from "components/Parallax/Parallax.js";
+import HeaderLinks from "components/Header/HeaderLinks";
+import Parallax from "components/Parallax/Parallax";
 
 import styles from "assets/jss/pages/landingPage.js";
 
 // Sections for this page
 import ProductSection from "pages-sections/landing/ProductSection";
-import TeamSection from "pages-sections/LandingPage-Sections/TeamSection.js";
-import WorkSection from "pages-sections/LandingPage-Sections/WorkSection.js";
+import TeamSection from "pages-sections/landing/TeamSection";
+import WorkSection from "pages-sections/landing/WorkSection";
 
 const dashboardRoutes = [];
 
@@ -58,8 +58,8 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          <TeamSection />
-          <WorkSection />
+          {/* <TeamSection />
+          <WorkSection /> */}
         </div>
       </div>
       <Footer />

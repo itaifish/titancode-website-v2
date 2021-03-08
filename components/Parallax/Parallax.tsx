@@ -7,9 +7,9 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
-import styles from "assets/jss/nextjs-material-kit/components/parallaxStyle.js";
+import styles from "assets/jss/components/parallaxStyle.js";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function Parallax(props) {
   let windowScrollTop;

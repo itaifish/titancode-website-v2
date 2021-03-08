@@ -15,9 +15,9 @@ import Drawer from "@material-ui/core/Drawer";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
-import styles from "assets/jss/nextjs-material-kit/components/headerStyle.js";
+import styles from "assets/jss/components/headerStyle.js";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function Header(props) {
   const classes = useStyles();
