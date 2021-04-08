@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "components/Header/Header.js", "components/CustomButtons/Button.js", "pages/index.js"  ],
+, "components/Header/Header.js", "components/CustomButtons/Button.tsx", "pages/index.js"  ],
   "exclude": [
     "node_modules"
   ]
