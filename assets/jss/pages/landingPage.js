@@ -13,7 +13,8 @@ const landingPageStyle = {
     marginTop: "30px",
     minHeight: "32px",
     color: "#FFFFFF",
-    textDecoration: "none"
+    textDecoration: "none",
+    textShadow: "-2px 2px black"
   },
   subtitle: {
     fontSize: "1.313rem",
@@ -30,6 +31,9 @@ const landingPageStyle = {
     borderRadius: "6px",
     boxShadow:
       "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
+  },
+  h4: {
+    textShadow: "-1px 1px black"
   }
 };
 

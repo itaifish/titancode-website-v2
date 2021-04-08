@@ -44,10 +44,10 @@ export default function LandingPage(props) {
       />
       <Parallax filter responsive image={require("assets/img/background/31.jpg")}>
         <div className={classes.container}>
-          <GridContainer>
+          <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Titan Code</h1>
-              <h4>
+              <h1 className={`${classes.title}`}>Titan Code</h1>
+              <h4 className={classes.h4}>
                 We don{"'"}t sell technology. We sell a solution to your problem, using code as the main tool to solve it.    
               </h4>
               <br />
@@ -58,8 +58,8 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          {/* <TeamSection />
-          <WorkSection /> */}
+          {/* <TeamSection />*/
+          <WorkSection /> }
         </div>
       </div>
       <Footer />

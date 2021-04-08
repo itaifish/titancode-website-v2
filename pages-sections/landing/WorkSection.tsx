@@ -7,25 +7,28 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
-import CustomInput from "components/CustomInput/CustomInput.js";
+import CustomInput from "components/CustomInput/CustomInput";
 import Button from "components/CustomButton/Button";
 
-import styles from "assets/jss/nextjs-material-kit/pages/landingPageSections/workStyle.js";
+import styles from "assets/jss/pages/workStyle.js";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles as any);
 
 export default function WorkSection() {
+  const [userName, setUserName] = React.useState("No Username Entered");
+  const [email, setEmail] = React.useState("No Email Entered");
+  const [message, setMessage] = React.useState("No Message Entered");
+  const [actionResponse, setActionResponse] = React.useState("");
+
+
   const classes = useStyles();
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
-        <GridItem cs={12} sm={12} md={8}>
-          <h2 className={classes.title}>Work with us</h2>
+        <GridItem xs={12} sm={12} md={8}>
+          <h2 className={classes.title}>Contact Us</h2>
           <h4 className={classes.description}>
-            Divide details about your product or agency work into parts. Write a
-            few lines about each one and contact us about any further
-            collaboration. We will responde get back to you in a couple of
-            hours.
+            Tell us what you need and we will reach out within one business day for a free quote and consultation.  
           </h4>
           <form>
             <GridContainer>
@@ -34,7 +37,10 @@ export default function WorkSection() {
                   labelText="Your Name"
                   id="name"
                   formControlProps={{
-                    fullWidth: true
+                    fullWidth: true,
+                    onChange: (ev) => {
+                      setUserName(ev.target.value);
+                    }
                   }}
                 />
               </GridItem>
@@ -43,7 +49,10 @@ export default function WorkSection() {
                   labelText="Your Email"
                   id="email"
                   formControlProps={{
-                    fullWidth: true
+                    fullWidth: true,
+                    onChange: (ev) => {
+                      setEmail(ev.target.value);
+                    }
                   }}
                 />
               </GridItem>
@@ -52,7 +61,10 @@ export default function WorkSection() {
                 id="message"
                 formControlProps={{
                   fullWidth: true,
-                  className: classes.textArea
+                  className: classes.textArea,
+                  onChange: (ev) => {
+                      setMessage(ev.target.value);
+                    }
                 }}
                 inputProps={{
                   multiline: true,
@@ -60,7 +72,9 @@ export default function WorkSection() {
                 }}
               />
               <GridItem xs={12} sm={12} md={4} className={classes.textCenter}>
-                <Button color="primary">Send Message</Button>
+                <Button color="primary" onClick={() => {
+                    console.log(`${userName}, ${email}, ${message}`);
+                  }}>Send Message</Button>
               </GridItem>
             </GridContainer>
           </form>

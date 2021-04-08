@@ -70,16 +70,7 @@ export default function Footer(props) {
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {new Date().getFullYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=njsmk-footer"
-            className={aClasses}
-            target="_blank"
-          >
-            Creative Tim
-          </a>{" "}
-          for a better web.
+          &copy; 2020 - {new Date().getFullYear()} Titan Code
         </div>
       </div>
     </footer>
